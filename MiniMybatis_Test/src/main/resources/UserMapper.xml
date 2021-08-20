@@ -1,0 +1,22 @@
+<mapper namespace="com.shiyi.dao.UserMapper">
+
+    <select id="selectOne" paramterType="com.shiyi.pojo.User" resultType="com.shiyi.pojo.User">
+        select * from user where id = #{ID}
+    </select>
+
+    <select id="selectList" resultType="com.shiyi.pojo.User">
+        select * from user
+    </select>
+
+    <update id="updateUserById" paramterType="com.shiyi.pojo.User" resultType="java.lang.Integer">
+        update user set pwd = #{pwd} where id = #{id}
+    </update>
+
+    <delete id="deleteUserById" paramterType="com.shiyi.pojo.User" resultType="java.lang.Integer">
+        delete from user where id = #{id}
+    </delete>
+
+    <insert id="insertUser" paramterType="com.shiyi.pojo.User" resultType="java.lang.Integer">
+        insert into user(id,name,age,pwd) values(#{id},#{name},#{age},#{pwd})
+    </insert>
+</mapper>
